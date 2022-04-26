@@ -9,6 +9,7 @@ coreschema==0.0.4
 decorator==5.1.1
 Django==3.2.7
 django-dump-load-utf8==0.0.4
+django-environ==0.8.1
 django-extensions==3.1.5
 django-seed==0.3.1
 djangorestframework==3.13.1
