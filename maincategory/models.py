@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class RECIPE_BASIC(models.Model) :
+class recipeBasic(models.Model) :
     #레시피 이름 
     recipeName = models.CharField(max_length = 30)
     #설명 
@@ -24,4 +24,3 @@ class RECIPE_BASIC(models.Model) :
     #이미지
     image = models.TextField()
 
-    

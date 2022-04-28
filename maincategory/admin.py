@@ -1,10 +1,10 @@
 from csv import list_dialects
 from django.contrib import admin
-from .models import RECIPE_BASIC
+from .models import recipeBasic
 # Register your models here.
 
 
-class RECIPE_BASICAdmin(admin.ModelAdmin) :
+class recipeBasicAdmin(admin.ModelAdmin) :
     list_display = ('recipeName','nationName','typeName')
 
-admin.site.register(RECIPE_BASIC,RECIPE_BASICAdmin)
+admin.site.register(recipeBasic,recipeBasicAdmin)
