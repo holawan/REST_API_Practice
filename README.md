@@ -31,4 +31,46 @@
     -  (null을 0칼로리로 조정? 홈페이지에서 세부 정보 찾아서 일일이 수정해야할 것 같음  )
     -  칼로리 2개, idrType 55개 null 존재 
     - 일단 model에 null=True옵션을 줘야 불러올 수 있을 것 같다. 
-  - 
+
+#### CSV 데이터 Sqlite3 DB에 옮기기 완료 
+
+```python
+import csv
+import os
+import django
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mafrapjt.settings")
+django.setup() 
+from Maincategory.models import recipeBasic
+csv_path = 'C:/Users/SAMSUNG/Desktop/web_pjt/Maincategory/data/recipe_basic.csv'
+with open(csv_path, newline='',encoding='utf-8') as f_csv:
+		row_dics = csv.DictReader(f_csv)
+		for row in row_dics: 
+			print(row)
+			recipeBasic.objects.create(
+				recipeName = row['recipeName'],
+                summary = row['summary'],
+                nationName = row['nationName'],
+                typeName = row['typeName'],
+                cookingTime = row['cookingTime'],
+                calorie = row['calorie'],
+                QNT = row['QNT'],
+                level = row['level'],
+                idrType = row['idrType'],
+                image = row['image'],
+
+			)
+```
+
+- DB에 옮기는데 2시간정도 걸렸다... 다양한 문제가 있었다.
+  1. 경로 설정 문제
+     - python file을 앱내부에 놔뒀더니 import error가 계속 생겼다.
+     - 경로의 문제인줄 알고 상대경로/절대경로 변경, BASE_DIR 설정 등 다양한 솔루션을 적용했으나 실패했다.
+     - 그래서 Python 파일을 여러 곳에 옮겨 봤는데, root폴더와 같은 위치에 넣으니 import 부분은 해결되었다.
+  2. field명 매칭 문제 
+     - field 이름이 엑셀의 데이터 이름과 매칭되지 않아서 에러가 발생했었다.
+     - 필드명을 매칭시키고 엑셀 데이터를 수정 한 후 encoding을 utf-8로 맞춰주니 문제를 해결할 수 있었다.
+
+- 산출물 ![sqlite3](README.assets/sqlite3.PNG)
+
+![admin_data](README.assets/admin_data.PNG)
+
