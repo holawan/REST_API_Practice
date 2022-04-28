@@ -23,3 +23,5 @@ class RECIPE_BASIC(models.Model) :
     idrType = models.CharField(max_length = 20,null=True)
     #이미지
     image = models.TextField()
+
+    
