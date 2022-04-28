@@ -1,11 +1,14 @@
 import csv
 import os, sys
+sys.path.append(os.pardir)
 import django
+from .models import recipeBasic
+
 
 def csv_to_db(django_model):
-	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "[Your-Project].settings")
+	os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mafrapjt.settings")
 	django.setup() 
-	csv_path = '/mafrapjt/maincategory/data/csv_to_db.csv'
+	csv_path = '/WEB_PJT/maincategory/data/recipe_basic.csv'
 	with open(csv_path, newline='') as f_csv:
 		row_dics = csv.DictReader(f_csv)
 		for row in row_dics: 
@@ -27,3 +30,5 @@ def csv_to_db(django_model):
                 image = row['image'],
 
 			)
+csv_to_db(recipeBasic)
+   
