@@ -1,16 +1,16 @@
 from rest_framework import serializers
 
-from .models import RecipeBasic 
+from .models import Recipe
 
 
-class RecipeBasicListSerializer(serializers.ModelSerializer) :
+class RecipeListSerializer(serializers.ModelSerializer) :
 
     class Meta :
-        model = RecipeBasic 
+        model = Recipe
         fields = ('recipeName','nationName','typeName',)
 
-class RecipeBasicSerializer(serializers.ModelSerializer) :
+class RecipeSerializer(serializers.ModelSerializer) :
 
     class Meta :
-        model = RecipeBasic 
+        model = Recipe
         fields = '__all__'

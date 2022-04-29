@@ -2,7 +2,8 @@ from django.db import models
 
 # Create your models here.
 
-class RecipeBasic(models.Model) :
+class Recipe(models.Model) :
+    id = models.AutoField(primary_key=True)
     #레시피 이름 
     recipeName = models.CharField(max_length = 30)
     #설명 
@@ -24,3 +25,23 @@ class RecipeBasic(models.Model) :
     #이미지
     image = models.TextField()
 
+
+class Material(models.Model)  :
+    #레시피 참조 
+    recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
+    #재료명 
+    irdnt_name= models.CharField(max_length=20)
+    #재료 용량 
+    irdnt_cpcty = models.CharField(max_length=10)
+    #재료 타입
+    irdnt_ty_nm = models.CharField(max_length=20)
+
+class Procedure(models.Model) :
+    #레시피 참조
+    recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
+    #조리방법 
+    cooking_dc = models.TextField()
+    #스텝별 사진
+    step_img = models.TextField(null=True)
+    #스텝별 팁 
+    step_tip = models.TextField()
