@@ -2,13 +2,19 @@ from django.db import models
 
 # Create your models here.
 
+
+
 class Recipe(models.Model) :
     #레시피 이름 
     recipeName = models.CharField(max_length = 30)
     #설명 
     summary = models.TextField()
+    #국가 분류 코드 
+    # nationCode = models.IntegerField()
     #국가 분류 (?) 한식/양식/중식 
     nationName = models.CharField(max_length= 30)
+    #요리 코드 
+    # typeCode = models.IntegerField()
     #요리 분류 (밥/떡/국/만두/면 등 )
     typeName = models.CharField(max_length = 30)
     #조리시간 
@@ -24,6 +30,9 @@ class Recipe(models.Model) :
     #이미지
     image = models.TextField()
 
+    def __str__(self):
+        return f'{self.recipeName}'
+
 
 class Material(models.Model)  :
     #레시피 참조 
@@ -33,6 +42,8 @@ class Material(models.Model)  :
     #재료 용량 
     irdnt_cpcty = models.CharField(max_length=10)
     #재료 타입
+    # idrnt_ty_code = models.IntegerField
+
     irdnt_ty_nm = models.CharField(max_length=20)
 
 class Procedure(models.Model) :
