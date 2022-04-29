@@ -91,8 +91,6 @@ with open(csv_path, newline='',encoding='utf-8') as f_csv:
 
 - 1차적으로 레시피 기본정보만 담긴 API 구축 성공 
 
-
-
 ### 추가 필드 생성
 
 - 레시피 기본 -> 레시피 과정 (1:N)
@@ -101,6 +99,10 @@ with open(csv_path, newline='',encoding='utf-8') as f_csv:
 #### 문제 발생
 
 - 레시피 재료에는 있지만 레시피 기본에 없는 필드 발견  
-
 - pk를 맞춰주기 위해, rawdata PK를 변경 
+  - 삭제 데이터 501~515, 517~530, 532~540
+
+##### 해결 완료
+
+
 
