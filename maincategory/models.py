@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 
-class recipeBasic(models.Model) :
+class RecipeBasic(models.Model) :
     #레시피 이름 
     recipeName = models.CharField(max_length = 30)
     #설명 

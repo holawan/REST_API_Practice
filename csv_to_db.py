@@ -7,15 +7,15 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mafrapjt.settings")
 django.setup() 
 
 
-from Maincategory.models import recipeBasic
+from Maincategory.models import RecipeBasic
 
-csv_path = 'C:/Users/SAMSUNG/Desktop/web_pjt/Maincategory/data/recipe_basic.csv'
+csv_path = 'C:/Users/SAMSUNG/Desktop/web_pjt/data/cleandata/recipe_basic.csv'
 
 with open(csv_path, newline='',encoding='utf-8') as f_csv:
 		row_dics = csv.DictReader(f_csv)
 		for row in row_dics: 
 			print(row)
-			recipeBasic.objects.create(
+			RecipeBasic.objects.create(
 				# id= row['id'], 
                 # ForeignKey의 경우 field명 뒤에 _id 입력
 				# [Your-Field_1]_id   = row['[Your-Field_1]_id'], 
