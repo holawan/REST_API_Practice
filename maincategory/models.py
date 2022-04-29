@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Recipe(models.Model) :
-    id = models.AutoField(primary_key=True)
     #레시피 이름 
     recipeName = models.CharField(max_length = 30)
     #설명 
@@ -37,8 +36,10 @@ class Material(models.Model)  :
     irdnt_ty_nm = models.CharField(max_length=20)
 
 class Procedure(models.Model) :
-    #레시피 참조
+    #레시피 참조    
     recipe = models.ForeignKey(Recipe,on_delete=models.CASCADE)
+    #조리순서
+    order_id = models.IntegerField()
     #조리방법 
     cooking_dc = models.TextField()
     #스텝별 사진
