@@ -7,7 +7,27 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mafrapjt.settings")
 django.setup() 
 
 
-from Maincategory.models import Recipe,Material,Procedure
+from Maincategory.models import Recipe,Material,Procedure,Type,Nation
+
+csv_path = 'C:/Users/SAMSUNG/Desktop/web_pjt/data/cleandata/type_name.csv'
+
+with open(csv_path, newline='',encoding='utf-8') as f_csv:
+		row_dics = csv.DictReader(f_csv)
+		for row in row_dics: 
+			print(row)
+			Type.objects.create(
+				name = row['name'],
+			)
+
+csv_path = 'C:/Users/SAMSUNG/Desktop/web_pjt/data/cleandata/nation_name.csv'
+
+with open(csv_path, newline='',encoding='utf-8') as f_csv:
+		row_dics = csv.DictReader(f_csv)
+		for row in row_dics: 
+			print(row)
+			Nation.objects.create(
+				name = row['name'],
+			)
 
 csv_path = 'C:/Users/SAMSUNG/Desktop/web_pjt/data/cleandata/recipe_basic.csv'
 
@@ -22,8 +42,8 @@ with open(csv_path, newline='',encoding='utf-8') as f_csv:
                 # ForeignKey 외 field명 입력
 				recipeName = row['recipeName'],
                 summary = row['summary'],
-                nationName = row['nationName'],
-                typeName = row['typeName'],
+                nation_id = row['nation_id'],
+                type_id = row['type_id'],
                 cookingTime = row['cookingTime'],
                 calorie = row['calorie'],
                 QNT = row['QNT'],

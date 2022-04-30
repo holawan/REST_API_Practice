@@ -8,7 +8,7 @@ from .models import Recipe,Material,Procedure
 
 
 class RecipeAdmin(admin.ModelAdmin) :
-    list_display = ('recipeName','nationName','typeName')
+    list_display = ('recipeName','nation','type')
 
 admin.site.register(Recipe,RecipeAdmin)
 

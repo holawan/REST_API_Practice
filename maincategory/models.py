@@ -1,7 +1,14 @@
 from django.db import models
 
 # Create your models here.
-
+class Type(models.Model) :
+    name = models.CharField(max_length=30)
+    def __str__(self):
+        return f'{self.name}'
+class Nation(models.Model) :
+    name = models.CharField(max_length=30)
+    def __str__(self):
+        return f'{self.name}'
 
 
 class Recipe(models.Model) :
@@ -10,13 +17,13 @@ class Recipe(models.Model) :
     #설명 
     summary = models.TextField()
     #국가 분류 코드 
-    # nationCode = models.IntegerField()
+    nation = models.ForeignKey(Nation,on_delete=models.CASCADE)
     #국가 분류 (?) 한식/양식/중식 
-    nationName = models.CharField(max_length= 30)
-    #요리 코드 
-    # typeCode = models.IntegerField()
+    # nationName = models.CharField(max_length= 30)
+    #요리분류 코드 
+    type = models.ForeignKey(Type,on_delete=models.CASCADE)
     #요리 분류 (밥/떡/국/만두/면 등 )
-    typeName = models.CharField(max_length = 30)
+    # typeName = models.CharField(max_length = 30)
     #조리시간 
     cookingTime = models.IntegerField()
     #칼로리 
