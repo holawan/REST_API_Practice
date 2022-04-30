@@ -1,7 +1,18 @@
-from pickletools import read_long1
 from rest_framework import serializers
+from .models import Recipe,Material,Procedure,Type,Nation
 
-from .models import Recipe,Material,Procedure
+
+class TypeListSerializer(serializers.ModelSerializer) :
+
+    class Meta :
+        model = Type
+        fields = '__all__'
+
+class NationListSerializer(serializers.ModelSerializer) :
+
+    class Meta :
+        model = Nation
+        fields = '__all__'
 
 
 class RecipeListSerializer(serializers.ModelSerializer) :
@@ -54,4 +65,20 @@ class RecipeSerializer(serializers.ModelSerializer) :
     material_count = serializers.IntegerField(source='material_set.count',read_only=True)
     class Meta :
         model = Recipe
+        fields = '__all__'
+
+class TypeSerializer(serializers.ModelSerializer) :
+    recipe_set = RecipeListSerializer(many=True,read_only=True)
+
+    recipe_count = serializers.IntegerField(source='recipe_set.count',read_only=True)
+    class Meta :
+        model = Type
+        fields = '__all__'
+
+class NationSerializer(serializers.ModelSerializer) :
+    recipe_set = RecipeListSerializer(many=True,read_only=True)
+
+    recipe_count = serializers.IntegerField(source='recipe_set.count',read_only=True)
+    class Meta :
+        model = Nation
         fields = '__all__'
