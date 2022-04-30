@@ -3,9 +3,19 @@ from django.contrib import admin
 # Register your models here.
 from csv import list_dialects
 from django.contrib import admin
-from .models import Recipe,Material,Procedure
+from .models import Recipe,Material,Procedure,Nation,Type
 # Register your models here.
 
+
+class NationAdmin(admin.ModelAdmin) :
+    list_display = ('name',)
+
+admin.site.register(Nation,NationAdmin)
+
+class TypeeAdmin(admin.ModelAdmin) :
+    list_display = ('name',)
+
+admin.site.register(Type,TypeeAdmin)
 
 class RecipeAdmin(admin.ModelAdmin) :
     list_display = ('recipeName','nation','type')

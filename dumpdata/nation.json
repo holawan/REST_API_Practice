@@ -1,0 +1,51 @@
+[
+{
+    "model": "Maincategory.nation",
+    "pk": 1,
+    "fields": {
+        "name": "한식"
+    }
+},
+{
+    "model": "Maincategory.nation",
+    "pk": 2,
+    "fields": {
+        "name": "서양"
+    }
+},
+{
+    "model": "Maincategory.nation",
+    "pk": 3,
+    "fields": {
+        "name": "일본"
+    }
+},
+{
+    "model": "Maincategory.nation",
+    "pk": 4,
+    "fields": {
+        "name": "중국"
+    }
+},
+{
+    "model": "Maincategory.nation",
+    "pk": 5,
+    "fields": {
+        "name": "동남아시아"
+    }
+},
+{
+    "model": "Maincategory.nation",
+    "pk": 6,
+    "fields": {
+        "name": "이탈리아"
+    }
+},
+{
+    "model": "Maincategory.nation",
+    "pk": 7,
+    "fields": {
+        "name": "퓨전"
+    }
+}
+]
