@@ -4,7 +4,6 @@ from rest_framework.decorators import api_view
 from rest_framework import status
 from .models import Material, Procedure, Recipe,Nation,Type
 from .serializer import NationSerializer, RecipeListSerializer,RecipeSerializer,ProcedureSerializer,MaterialSerializer,MaterialDetailSerializer,NationListSerializer,TypeListSerializer,TypeSerializer
-from Maincategory import serializer
 
 
 
