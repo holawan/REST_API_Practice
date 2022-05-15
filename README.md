@@ -33,7 +33,7 @@
 
 #### 모델명을 RECIPE_BASIC으로 설정했는데,아래 형태로 형식이 맞지 않음, 언더바 제거를 고려 (해결)
 
-- ![admin](README.assets/admin.PNG)
+![admin](README.assets/admin.PNG)
 
 #### 레시피 기본정보.csv  calorie 필드에 0kcal/null인 데이터가 있음, idrType(재료 종류)에도 null 존재 
 
