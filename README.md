@@ -1,4 +1,6 @@
-# gonmo_api_Django
+# REST_API_Django
+
+## 레시피 및 식재료 공공데이터로 REST API 구축해보기
 
 ## 0426
 
@@ -11,8 +13,8 @@
 
 ## 0427
 
-- 회의 결과 
-  - 백앤드는 express/ django로 일단 둘 다 개발해보기 
+- 백앤드는 express/ django로 일단 둘 다 개발해보기 
+
 - 내 역할 : 메인 페이지 구축 위한 REST API 서버 만들기 
 
 ## 0428
